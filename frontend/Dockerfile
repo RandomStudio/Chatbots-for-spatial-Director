@@ -10,4 +10,4 @@ RUN npm run build
 # build the nginx image
 FROM nginx:1.17
 COPY --from=dist /opt/project/dist /usr/share/nginx/html
-COPY ./nginx.conf /etc/nginx/nginx.conf
+COPY ./frontend/nginx.conf /etc/nginx/nginx.conf
