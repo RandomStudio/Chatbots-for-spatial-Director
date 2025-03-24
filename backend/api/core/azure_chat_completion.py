@@ -1,14 +1,19 @@
-import json
+import os
 from openai import OpenAI
 from pathlib import Path
 from typing import List, Dict, Optional, Generator, Any
 
-# Define OpenAI parameters
-OPENAI_KEY_FILE = Path(__file__).parent / "openai_api_key.txt"
+try:
+    # Define OpenAI parameters
+    OPENAI_KEY_FILE = Path(__file__).parent / "openai_api_key.txt"
 
-# Set up OpenAI client
-with open(OPENAI_KEY_FILE, "r") as file:
-    key = file.read().strip()
+    # Set up OpenAI client
+    with open(OPENAI_KEY_FILE, "r") as file:
+        key = file.read().strip()
+
+except:
+    key = os.environ.get("OPENAI_KEY")
+
 client = OpenAI(
     api_key=key
 )
