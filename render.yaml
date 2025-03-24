@@ -4,7 +4,6 @@ services:
     env: docker
     repo: https://github.com/RandomStudio/Chatbots-for-spatial-Director/tree/main
     dockerfilePath: frontend/Dockerfile
-    buildContext: frontend
     plan: free
     autoDeploy: true
 
@@ -13,6 +12,5 @@ services:
     env: docker
     repo: https://github.com/RandomStudio/Chatbots-for-spatial-Director/tree/main
     dockerfilePath: backend/Dockerfile
-    buildContext: backend
     plan: free
     autoDeploy: true
